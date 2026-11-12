@@ -1085,9 +1085,6 @@ form {
   transition: background-color 0.2s ease;
 }
 
-
-
-
 .active-in {
   background-color: var(--color-income);
   color: var(--text-primary);

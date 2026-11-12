@@ -54,7 +54,7 @@ Want to explore the project locally?
 1. Clone this repository:
 
    ```bash
-   git clone YOUR_REPOSITORY_URL
+   git clone https://github.com/Murlidhar77/Finance-tracker.git
    ```
 
 2. Open the project folder:
