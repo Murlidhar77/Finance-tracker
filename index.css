@@ -79,6 +79,12 @@
   --gradient-expense: linear-gradient(180deg, #ff7a80 0%, #e84a55 100%);
   --gradient-card: linear-gradient(145deg, #0d1838 0%, #09122e 100%);
 
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
+  --shadow-glow-primary: 0 0 0 3px rgba(61, 77, 242, 0.35);
+  --shadow-glow-income: 0 0 16px rgba(34, 201, 133, 0.35);
+
   --font-family:
     "Inter", "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-heading: "Space Grotesk", var(--font-family);
@@ -116,12 +122,6 @@
   --radius-pill: 999px;
   --radius-circle: 50%;
 
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.35);
-  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
-  --shadow-glow-primary: 0 0 0 3px rgba(61, 77, 242, 0.35);
-  --shadow-glow-income: 0 0 16px rgba(34, 201, 133, 0.35);
-
   --sidebar-width: 240px;
   --header-height: 80px;
   --content-gap: 20px;
@@ -146,30 +146,87 @@
   --z-toast: 400;
 }
 
-[data-theme="light"] {
-  --bg-body: #f4f6fc;
-  --bg-sidebar: #ffffff;
-  --bg-card: #ffffff;
-  --bg-card-hover: #f0f3ff;
-  --bg-elevated: #ffffff;
-  --bg-input: #f4f6fc;
-  --bg-input-focus: #ffffff;
-  --bg-nav-active: #e3e8ff;
-  --bg-track: #e3e8f7;
-  --border-color: #dde3f5;
-  --border-subtle: #eaeefa;
-  --text-primary: #0b1533;
-  --text-secondary: #4a5578;
-  --text-muted: #7d89ad;
-  --chart-grid: #e3e8f7;
-  --chart-axis-text: #6b7699;
-  --chart-label-text: #0b1533;
-  --shadow-md: 0 4px 14px rgba(30, 50, 120, 0.1);
-}
+.light-theme {
+  --color-primary: #3d4df2;
+  --color-primary-hover: #2f3dd1;
+  --color-primary-active: #2431b0;
+  --color-primary-soft: rgba(61, 77, 242, 0.1);
+  --color-primary-border: #b9c1fb;
+  --color-accent: #5565f5;
 
-/* ==============================
-   MAIN LAYOUT
-============================== */
+  --bg-body: #f4f6fd;
+  --bg-sidebar: #ffffff;
+  --bg-card: #3d3ad0;
+  --bg-card-hover: #f7f8ff;
+  --bg-elevated: #ffffff;
+  --bg-input: #f1f3fc;
+  --bg-input-focus: #ffffff;
+  --bg-nav-active: #e4e8ff;
+  --bg-nav-hover: rgba(61, 77, 242, 0.07);
+  --bg-track: #e3e7f7;
+  --bg-overlay: rgba(15, 23, 60, 0.45);
+
+  --border-color: #d5daf0;
+  --border-subtle: #e6e9f6;
+  --border-strong: #b6bee3;
+  --border-focus: var(--color-primary);
+  --divider: #e6e9f6;
+
+  --text-primary: #0b1233;
+  --text-secondary: #424b78;
+  --text-muted: #6a739f;
+  --text-disabled: #aab1d1;
+  --text-on-primary: #ffffff;
+  --text-link: #3d4df2;
+
+  --color-income: #12a06a;
+  --color-income-strong: #0d8656;
+  --color-income-bg: #d9f5e8;
+  --color-income-soft: rgba(18, 160, 106, 0.12);
+
+  --color-expense: #e5384a;
+  --color-expense-strong: #c92a3b;
+  --color-expense-bg: #fde3e6;
+  --color-expense-soft: rgba(229, 56, 74, 0.1);
+
+  --color-danger: #d92d3f;
+  --color-warning: #d97706;
+  --color-success: var(--color-income);
+  --color-info: #2f5fe0;
+
+  --icon-balance-bg: #d9f5e8;
+  --icon-income-bg: #cdeedd;
+  --icon-expense-bg: #fde3e6;
+  --icon-savings-bg: #e4e8ff;
+
+  --cat-food: #e5384a;
+  --cat-shopping: #4b3de0;
+  --cat-transport: #2f5fe0;
+  --cat-bills: #d99a06;
+  --cat-entertainment: #0e9bb3;
+  --cat-other: #7a82c9;
+  --cat-freelance: #6a58f0;
+  --cat-salary: #12a06a;
+  --cat-savings: #f08a24;
+
+  --overlay-one: rgba(15, 23, 60, 0.35);
+  --chart-income: #12a06a;
+  --chart-expense: #e5384a;
+  --chart-grid: #e3e7f5;
+  --chart-axis-text: #6a739f;
+  --chart-label-text: #1a2250;
+
+  --gradient-primary: linear-gradient(135deg, #4d5cff 0%, #3140d9 100%);
+  --gradient-income: linear-gradient(180deg, #2ec98e 0%, #0f9a66 100%);
+  --gradient-expense: linear-gradient(180deg, #ff6b78 0%, #db3345 100%);
+  --gradient-card: linear-gradient(145deg, #ffffff 0%, #f3f5fe 100%);
+
+  --shadow-sm: 0 1px 3px rgba(26, 34, 80, 0.08);
+  --shadow-md: 0 4px 14px rgba(26, 34, 80, 0.1);
+  --shadow-lg: 0 12px 32px rgba(26, 34, 80, 0.14);
+  --shadow-glow-primary: 0 0 0 3px rgba(61, 77, 242, 0.22);
+  --shadow-glow-income: 0 0 16px rgba(18, 160, 106, 0.25);
+}
 
 html,
 body {
@@ -189,7 +246,7 @@ body {
     "aside nav"
     "aside main";
   background-color: var(--bg-body);
-  color: white;
+  color: var(--text-primary);
   min-height: 0;
   min-width: 0;
 }
@@ -227,10 +284,6 @@ main {
 main::-webkit-scrollbar {
   display: none;
 }
-
-/* ==============================
-   NAVBAR
-============================== */
 
 nav .left {
   display: flex;
@@ -316,10 +369,6 @@ nav .toogle-btn {
   gap: 12px;
 }
 
-/* ==============================
-   THEME TOGGLE
-============================== */
-
 .toggle {
   position: relative;
   display: inline-flex;
@@ -391,10 +440,6 @@ nav .toogle-btn {
   opacity: 0.5;
   cursor: not-allowed;
 }
-
-/* ==============================
-   SIDEBAR
-============================== */
 
 aside {
   display: flex;
@@ -582,10 +627,6 @@ aside .down {
   gap: 14px;
 }
 
-/* ==============================
-   DASHBOARD CARDS
-============================== */
-
 .cards {
   display: flex;
   justify-content: space-around;
@@ -677,10 +718,6 @@ aside .down {
   font-size: 12px;
 }
 
-/* ==============================
-   CASH FLOW
-============================== */
-
 .cashflow {
   width: calc(100% - 20px);
   padding: 24px;
@@ -713,8 +750,8 @@ aside .down {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #eef2ff;
-  color: #4f46e5;
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
   border-radius: 12px;
   flex-shrink: 0;
 }
@@ -726,7 +763,7 @@ aside .down {
 
 .cashflow-title h3 {
   margin: 0;
-  color: #172033;
+  color: var(--text-primary);
   font-size: 17px;
   font-weight: 600;
   letter-spacing: -0.3px;
@@ -734,7 +771,7 @@ aside .down {
 
 .cashflow-title p {
   margin: 5px 0 0;
-  color: #8b95a7;
+  color: var(--text-muted);
   font-size: 12px;
   font-weight: 400;
 }
@@ -782,10 +819,6 @@ aside .down {
   width: 100% !important;
   height: 100% !important;
 }
-
-/* ==============================
-   TRANSACTIONS
-============================== */
 
 .tarnsaction {
   min-height: 500px;
@@ -893,10 +926,6 @@ aside .down {
   color: var(--text-primary) !important;
 }
 
-/* ==============================
-   TRANSACTION TABLE
-============================== */
-
 .down-transaction {
   display: flex;
   justify-content: space-between;
@@ -907,8 +936,8 @@ aside .down {
 table {
   width: 68%;
   border-collapse: collapse;
-  background: var(--bg-body);
-  color: var(--text-on-primary);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
   font-family:
     "Inter",
     system-ui,
@@ -924,8 +953,8 @@ thead th {
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.04em;
-  color: #9aa3b8;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-color);
 }
 
 thead th:last-child,
@@ -1038,10 +1067,6 @@ td button img {
   width: 16px;
   height: 16px;
 }
-
-/* ==============================
-   TRANSACTION FORM
-============================== */
 
 form {
   width: 30%;
@@ -1257,7 +1282,9 @@ form {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  background-color: var(--text-primary);
+  background-color: var(--bg-elevated);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
   border: 1px solid var(--text-on-primary);
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
@@ -1268,21 +1295,22 @@ form {
   margin: 8px 0 4px;
   font-size: 16px;
   font-weight: 600;
-  color: var(--bg-body);
+  color: var(--text-primary);
 }
 
 .profile-form input {
   width: 100%;
   box-sizing: border-box;
   padding: 12px 14px;
-  border: 1px solid var(--bg-nav-active);
   border-radius: 8px;
   outline: none;
   font-size: 14px;
-  color: var(--bg-body);
   transition:
     border-color 0.2s,
     box-shadow 0.2s;
+  background: var(--bg-input);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
 }
 
 .profile-form input:focus {
