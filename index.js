@@ -235,75 +235,40 @@ function CreateTable() {
 let cashflowChart = null;
 
 function Creategraph() {
+  let totalincome = incomedata.reduce((acc, value) => {
+    return acc + Number(value.amount);
+  }, 0);
 
-  let alltransaction = [...incomedata,...expensesdata]
-
-  let monthlydata = {}
-
-  alltransaction.forEach(transaction => {
-
-    let date = transaction.date;
-    let month = date.slice(0,7)
-    
-    if (!monthlydata[month]) {
-      monthlydata[month]={
-        income: 0,
-        expenses:0,
-      }
-    }
-
-
-    if (transaction.type === "income") {
-      monthlydata[month].income += Number(transaction.amount)
-    }else if(transaction.type === "expenses"){
-      monthlydata[month].expenses += Number(transaction.amount)
-    }
-  });
-
-  let sortedMonths = Object.keys(monthlydata).sort()
-
-    let labels = sortedMonths.map((month) => {
-    let [year, monthNumber] = month.split("-");
-    return new Date(Number(year), Number(monthNumber) - 1)
-      .toLocaleString("en-US", { month: "short", year: "numeric" });
-  });
-
-
-  let incomevalues = sortedMonths.map((month)=>
-  monthlydata[month].income 
-  )
-
-   let expensesvalue = sortedMonths.map((month)=>
-  monthlydata[month].expenses 
-  )
+  let totalexpenses = expensesdata.reduce((acc, value) => {
+    return acc + Number(value.amount);
+  }, 0);
 
   let ctx = document.querySelector("#cashflowChart");
-  if (cashflowChart) {
-    cashflowChart.data.labels = labels;
-    cashflowChart.data.datasets[0].data = incomevalues;
-    cashflowChart.data.datasets[1].data = expensesvalue;
 
+  let chartdata = [totalincome, totalexpenses];
+
+  if (cashflowChart) {
+    cashflowChart.data.datasets[0].data = chartdata;
     cashflowChart.update();
   } else {
-
     cashflowChart = new Chart(ctx, {
-      type: "bar",
+      type: "pie",
 
       data: {
-        labels: labels,
+        labels: ["Income", "Expenses"],
 
         datasets: [
           {
-            label: "Income",
-            data: incomevalues,
-            backgroundColor: "#22c55e",
-            borderRadius: 4
-          },
-          {
-            label: "Expenses",
-            data: expensesvalue,
-            backgroundColor: "#ef4444",
-            borderRadius: 4
+            data: chartdata,
+
+            backgroundColor: [
+              "#22c55e",
+              "#ef4444"
+            ],
+
+            borderColor: "#ffffff",
+            borderWidth: 2,
+            hoverOffset: 8
           }
         ]
       },
@@ -312,18 +277,24 @@ function Creategraph() {
         responsive: true,
         maintainAspectRatio: false,
 
-        scales: {
-          y: {
-            beginAtZero: true
+        radius: "100%",
+
+        plugins: {
+          legend: {
+            position: "bottom",
+            labels: {
+              color: "#888888",
+              padding: 20,
+              usePointStyle: true
+            }
           }
         }
       }
     });
-
   }
-
 }
 
 Renderdata();
 CreateTable();
 Creategraph();
+
