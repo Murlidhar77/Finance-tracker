@@ -323,7 +323,28 @@ function Creategraph() {
   }
 
 }
-
 Renderdata();
 CreateTable();
 Creategraph();
+
+
+let lightheme = localStorage.getItem("lightmode")
+let togglebtn = document.querySelector("#toggle-btn")
+
+function Enablelight() {
+  document.body.classList.add("light")
+  localStorage.setItem("lightmode","active")
+}
+
+function Disablelight() {
+  document.body.classList.remove("light")
+  localStorage.setItem("lightmode",null)
+}
+if (lightheme=== "active"){
+  Enablelight()
+  togglebtn.checked = true
+}
+
+togglebtn.addEventListener("change", function () {
+  togglebtn.checked  ? Enablelight() : Disablelight()
+})

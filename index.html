@@ -10,11 +10,11 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"rel="stylesheet"/>
 </head>
 
-<body >
+<body class="light" >
 
     <!-- sidebar -->
 
-    <aside>
+    <aside >
         <section class="top">
             <div class="logo">
                 <img src="/images/logo.png" alt="">
@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="logs">
-                <h2><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                <h2 class="active-logs"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                         stroke="#ffffff" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"
                         class="lucide lucide-house preview-icon">
                         <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
@@ -87,9 +87,6 @@
                 </svg> Logout</button>
         </section>
     </aside>
-
-
-    </div>
     <!-- navbar -->
     <nav>
         <section class="left">
@@ -105,6 +102,16 @@
                 <option value="USD">Dollar ($)</option>
             </select>
             <div class="toogle-btn">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="#f7f7f7" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-moon preview-icon">
+                    <path
+                        d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" />
+                </svg>
+                <label class="toggle">
+                    <input type="checkbox" id="toggle-btn" role="switch" />
+                    <span class="slider"></span>
+                </label>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                     stroke="#f7f7f7" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-sun preview-icon">
@@ -117,16 +124,6 @@
                     <path d="M20 12h2" />
                     <path d="m6.34 17.66-1.41 1.41" />
                     <path d="m19.07 4.93-1.41 1.41" />
-                </svg>
-                <label class="toggle">
-                    <input type="checkbox" id="toggle-btn" role="switch" />
-                    <span class="slider"></span>
-                </label>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="#f7f7f7" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-moon preview-icon">
-                    <path
-                        d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" />
                 </svg>
             </div>
         </section>
