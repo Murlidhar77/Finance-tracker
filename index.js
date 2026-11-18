@@ -293,6 +293,30 @@ function Creategraph() {
     });
   }
 }
+
+let tooglebtn = document.querySelector("#toggle-btn")
+let lightmode = localStorage.getItem("lighttheme")
+
+function Enablelight() {
+  document.body.classList.add("light")
+  localStorage.setItem("lighttheme","active")
+}
+
+function Disablelight(){
+  document.body.classList.remove("light")
+  localStorage.setItem("lighttheme","inactive")
+}
+
+if (lightmode === "active") {
+  Enablelight()
+  tooglebtn.checked = true
+}
+
+tooglebtn.addEventListener("change",function () {
+  tooglebtn.checked ? Enablelight() : Disablelight()
+})
+
+
 Renderdata();
 CreateTable();
 Creategraph();

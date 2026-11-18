@@ -1,361 +1,496 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"rel="stylesheet"/>
-</head>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
 
-<body class="light" >
-
+  <body class="light">
     <!-- sidebar -->
 
-    <aside >
-        <section class="top">
-            <div class="logo">
-                <img src="/images/logo.png" alt="">
-                <div class="logo-2">
-                    <h1>Fintrack Pro</h1>
-                    <div class="track">
-                        <p>Track</p>
-                        <span class="line"></span>
-                        <p>Plan</p>
-                        <span class="line"></span>
-                        <p>Grow</p>
-                    </div>
-                </div>
+    <aside>
+      <section class="top">
+        <div class="logo">
+          <img src="/images/logo.png" alt="" />
+          <div class="logo-2">
+            <h1>Fintrack Pro</h1>
+            <div class="track">
+              <p>Track</p>
+              <span class="line"></span>
+              <p>Plan</p>
+              <span class="line"></span>
+              <p>Grow</p>
             </div>
-            <div class="logs">
-                <h2 class="active-logs"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                        stroke="#ffffff" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-house preview-icon">
-                        <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
-                        <path
-                            d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                    </svg>Overview</h2>
-                <h2><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                        stroke="#ffffff" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-logs preview-icon">
-                        <path d="M3 5h1" />
-                        <path d="M3 12h1" />
-                        <path d="M3 19h1" />
-                        <path d="M8 5h1" />
-                        <path d="M8 12h1" />
-                        <path d="M8 19h1" />
-                        <path d="M13 5h8" />
-                        <path d="M13 12h8" />
-                        <path d="M13 19h8" />
-                    </svg>Transaction</h2>
-                <h2><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                        stroke="#ffffff" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-chart-pie preview-icon">
-                        <path
-                            d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z" />
-                        <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
-                    </svg>Analytics</h2>
-                <h2><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                        stroke="#ffffff" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-settings preview-icon">
-                        <path
-                            d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
-                        <circle cx="12" cy="12" r="3" />
-                    </svg>Profile Settings</h2>
-            </div>
-        </section>
-        <section class="down">
-            <button id="Reset-data"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"fill="none" stroke="#ec0909" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"class="lucide lucide-rotate-ccw preview-icon"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" /><path d="M3 3v5h5" /></svg> Reset data</button>
-            <span class="big-line"></span>
-            <div class="profile">
-                <div class="profile-image">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500" alt="" id="imagedisplay" >
-                </div>
-                <div class="profile-details">
-                    <h3 id="profile-name">Murlidhar</h3>
-                    <p>Inr ₹</p>
-                </div>
-            </div>
-            <button id="logout"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                    fill="none" stroke="#ededed" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-log-out preview-icon">
-                    <path d="m16 17 5-5-5-5" />
-                    <path d="M21 12H9" />
-                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
-                </svg> Logout</button>
-        </section>
+          </div>
+        </div>
+        <div class="logs">
+          <h2 class="active-logs">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#ffffff"
+              stroke-width="2.25"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-house preview-icon"
+            >
+              <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+              <path
+                d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+              /></svg
+            >Overview
+          </h2>
+          <h2>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#ffffff"
+              stroke-width="2.25"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-logs preview-icon"
+            >
+              <path d="M3 5h1" />
+              <path d="M3 12h1" />
+              <path d="M3 19h1" />
+              <path d="M8 5h1" />
+              <path d="M8 12h1" />
+              <path d="M8 19h1" />
+              <path d="M13 5h8" />
+              <path d="M13 12h8" />
+              <path d="M13 19h8" /></svg
+            >Transaction
+          </h2>
+          <h2>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#ffffff"
+              stroke-width="2.25"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-chart-pie preview-icon"
+            >
+              <path
+                d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z"
+              />
+              <path d="M21.21 15.89A10 10 0 1 1 8 2.83" /></svg
+            >Analytics
+          </h2>
+          <h2>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#ffffff"
+              stroke-width="2.25"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-settings preview-icon"
+            >
+              <path
+                d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"
+              />
+              <circle cx="12" cy="12" r="3" /></svg
+            >Profile Settings
+          </h2>
+        </div>
+      </section>
+      <section class="down">
+        <button id="Reset-data">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#ec0909"
+            stroke-width="2.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-rotate-ccw preview-icon"
+          >
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+            <path d="M3 3v5h5" />
+          </svg>
+          Reset data
+        </button>
+        <span class="big-line"></span>
+        <div class="profile">
+          <div class="profile-image">
+            <img
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500"
+              alt=""
+              id="imagedisplay"
+            />
+          </div>
+          <div class="profile-details">
+            <h3 id="profile-name">Murlidhar</h3>
+            <p>Inr ₹</p>
+          </div>
+        </div>
+        <button id="logout">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#ededed"
+            stroke-width="2.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-log-out preview-icon"
+          >
+            <path d="m16 17 5-5-5-5" />
+            <path d="M21 12H9" />
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+          </svg>
+          Logout
+        </button>
+      </section>
     </aside>
     <!-- navbar -->
     <nav>
-        <section class="left">
-            <h1>Good Afternoon, <span id="name-two">Alex.👋</span></h1>
-            <p>Here's Your Financial Overview</p>
-        </section>
-        <section class="right">
-            <select>
-                <option value="" selected disabled>Select Currency</option>
-                <option value="INR">INR (₹)</option>
-                <option value="JPY">Yen (¥)</option>
-                <option value="EUR">Euro (€)</option>
-                <option value="USD">Dollar ($)</option>
-            </select>
-            <div class="toogle-btn">
-                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="#f7f7f7" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-moon preview-icon">
-                    <path
-                        d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" />
-                </svg>
-                <label class="toggle">
-                    <input type="checkbox" id="toggle-btn" role="switch" />
-                    <span class="slider"></span>
-                </label>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="#f7f7f7" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-sun preview-icon">
-                    <circle cx="12" cy="12" r="4" />
-                    <path d="M12 2v2" />
-                    <path d="M12 20v2" />
-                    <path d="m4.93 4.93 1.41 1.41" />
-                    <path d="m17.66 17.66 1.41 1.41" />
-                    <path d="M2 12h2" />
-                    <path d="M20 12h2" />
-                    <path d="m6.34 17.66-1.41 1.41" />
-                    <path d="m19.07 4.93-1.41 1.41" />
-                </svg>
-            </div>
-        </section>
+      <section class="left">
+        <h1>Good Afternoon, <span id="name-two">Alex.👋</span></h1>
+        <p>Here's Your Financial Overview</p>
+      </section>
+      <section class="right">
+        <select>
+          <option value="" selected disabled>Select Currency</option>
+          <option value="INR">INR (₹)</option>
+          <option value="JPY">Yen (¥)</option>
+          <option value="EUR">Euro (€)</option>
+          <option value="USD">Dollar ($)</option>
+        </select>
+        <div class="toogle-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#f7f7f7"
+            stroke-width="2.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-moon preview-icon"
+          >
+            <path
+              d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
+            />
+          </svg>
+          <label class="toggle">
+            <input type="checkbox" id="toggle-btn" role="switch" />
+            <span class="slider"></span>
+          </label>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#f7f7f7"
+            stroke-width="2.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-sun preview-icon"
+          >
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2" />
+            <path d="M12 20v2" />
+            <path d="m4.93 4.93 1.41 1.41" />
+            <path d="m17.66 17.66 1.41 1.41" />
+            <path d="M2 12h2" />
+            <path d="M20 12h2" />
+            <path d="m6.34 17.66-1.41 1.41" />
+            <path d="m19.07 4.93-1.41 1.41" />
+          </svg>
+        </div>
+      </section>
     </nav>
     <!-- main -->
     <main>
-
-        <!-- Profile form -->
-        <div class="overlay" style="display: none;">
-            <section class="profile-form">
-                <div class="button">
-                    <div></div>
-                    <button id="close-profile">X</button>
-                </div>
-                <h3>Enter the name to profile</h3>
-                <input type="text" id="name">
-                <h3>Enter The imageur to profile</h3>
-                <input type="text" id="imageurl">
-                <button type="button" id="done">Set Profile</button>
-            </section>
-        </div>
-
-
-        <section class="cards">
-            <!-- cards-section -->
-            <article class="Card Current-balance">
-                <div class="card-image">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-                        stroke="#ffffff" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-wallet preview-icon">
-                        <path
-                            d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" />
-                        <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" />
-                    </svg>
-                </div>
-                
-                <div class="card-details">
-                    <h4>Current-Balance</h4>
-                    <h1 id="Balance">₹84,250.00</h1>
-                    <div class="data">
-                        <p>Income-Expnense</p>
-                        <span id="Current-balance-data">70.2%</span>
-                    </div>
-                </div>
-            </article>
-
-            <article class="Card Total-income">
-                <div class="card-image">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-                        stroke="#ffffff" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-arrow-down preview-icon">
-                        <path d="M12 5v14" />
-                        <path d="m19 12-7 7-7-7" />
-                    </svg>
-                </div>
-                <div class="card-details">
-                    <h4>Total-income</h4>
-                    <h1 id="Total">₹1,20,000.00</h1>
-                    <div class="data">
-                        <p>All time Eranings</p>
-                        <span id="Income-data">70.2%</span>
-                    </div>
-                </div>
-            </article>
-
-            <article class="Card Total-Expenses">
-                <div class="card-image">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-                        stroke="#ffffff" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-arrow-up preview-icon">
-                        <path d="m5 12 7-7 7 7" />
-                        <path d="M12 19V5" />
-                    </svg>
-                </div>
-                <div class="card-details">
-                    <h4>Total-Expenses</h4>
-                    <h1 id="Expenses">₹35,250.00</h1>
-                    <div class="data">
-                        <p>Income-Expnense</p>
-                        <span id="Total-Expenses-data">30.2%</span>
-                    </div>
-                </div>
-            </article>
-
-            <article class="Card Saving-rate">
-                <div class="card-image">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-                        stroke="#ffffff" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-percent preview-icon">
-                        <line x1="19" x2="5" y1="5" y2="19" />
-                        <circle cx="6.5" cy="6.5" r="2.5" />
-                        <circle cx="17.5" cy="17.5" r="2.5" />
-                    </svg>
-                </div>
-                <div class="card-details">
-                    <h4>Saving Rate</h4>
-                    <h1 id="Saving">70.2%</h1>
-                    <div class="data">
-                        <p>Income-Expnense</p>
-                        <span id="Saving-rate-data">30.2%</span>
-                    </div>
-                </div>
-            </article>
+      <!-- Profile form -->
+      <div class="overlay" style="display: none">
+        <section class="profile-form">
+          <div class="button">
+            <div></div>
+            <button id="close-profile">X</button>
+          </div>
+          <h3>Enter the name to profile</h3>
+          <input type="text" id="name" />
+          <h3>Enter The imageur to profile</h3>
+          <input type="text" id="imageurl" />
+          <button type="button" id="done">Set Profile</button>
         </section>
+      </div>
 
-        <section class="cashflow-parent">
-            <div class="cashflow">
-                <div class="cashflow-header">
-                    <div class="cashflow-title">
-                        <div class="cashflow-icon">
-                            <i data-lucide="chart-no-axes-combined"></i>
-                        </div>
-                        <div>
-                            <h3>Cash Flow</h3>
-                            <p>Earnings vs Spending over time</p>
-                        </div>
-                    </div>
-                    <div class="cashflow-filter">
-                        <select id="cashflow-period">
-                            <option value="6">Last 6 months</option>
-                            <option value="12">Last 12 months</option>
-                            <option value="3">Last 3 months</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="cashflow-chart">
-                    <canvas id="cashflowChart"></canvas>
-                </div>
+      <section class="cards">
+        <!-- cards-section -->
+        <article class="Card Current-balance">
+          <div class="card-image">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#ffffff"
+              stroke-width="2.25"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-wallet preview-icon"
+            >
+              <path
+                d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"
+              />
+              <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" />
+            </svg>
+          </div>
+
+          <div class="card-details">
+            <h4>Current-Balance</h4>
+            <h1 id="Balance">₹84,250.00</h1>
+            <div class="data">
+              <p>Income-Expnense</p>
+              <span id="Current-balance-data">70.2%</span>
             </div>
+          </div>
+        </article>
+
+        <article class="Card Total-income">
+          <div class="card-image">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#ffffff"
+              stroke-width="2.25"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-arrow-down preview-icon"
+            >
+              <path d="M12 5v14" />
+              <path d="m19 12-7 7-7-7" />
+            </svg>
+          </div>
+          <div class="card-details">
+            <h4>Total-income</h4>
+            <h1 id="Total">₹1,20,000.00</h1>
+            <div class="data">
+              <p>All time Eranings</p>
+              <span id="Income-data">70.2%</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="Card Total-Expenses">
+          <div class="card-image">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#ffffff"
+              stroke-width="2.25"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-arrow-up preview-icon"
+            >
+              <path d="m5 12 7-7 7 7" />
+              <path d="M12 19V5" />
+            </svg>
+          </div>
+          <div class="card-details">
+            <h4>Total-Expenses</h4>
+            <h1 id="Expenses">₹35,250.00</h1>
+            <div class="data">
+              <p>Income-Expnense</p>
+              <span id="Total-Expenses-data">30.2%</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="Card Saving-rate">
+          <div class="card-image">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#ffffff"
+              stroke-width="2.25"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-percent preview-icon"
+            >
+              <line x1="19" x2="5" y1="5" y2="19" />
+              <circle cx="6.5" cy="6.5" r="2.5" />
+              <circle cx="17.5" cy="17.5" r="2.5" />
+            </svg>
+          </div>
+          <div class="card-details">
+            <h4>Saving Rate</h4>
+            <h1 id="Saving">70.2%</h1>
+            <div class="data">
+              <p>Income-Expnense</p>
+              <span id="Saving-rate-data">30.2%</span>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="cashflow-parent">
+        <div class="cashflow">
+          <div class="cashflow-header">
+            <div class="cashflow-title">
+              <div class="cashflow-icon">
+                <i data-lucide="chart-no-axes-combined"></i>
+              </div>
+              <div>
+                <h3>Cash Flow</h3>
+                <p>Earnings vs Spending over time</p>
+              </div>
+            </div>
+            <div class="cashflow-filter">
+              <select id="cashflow-period">
+                <option value="6">Last 6 months</option>
+                <option value="12">Last 12 months</option>
+                <option value="3">Last 3 months</option>
+              </select>
+            </div>
+          </div>
+          <div class="cashflow-chart">
+            <canvas id="cashflowChart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- Transaction section -->
+      <section class="tarnsaction">
+        <section class="top-transaction">
+          <div class="left">
+            <h1>Recent Transaction</h1>
+            <button id="Recent-all" class="active">All</button>
+            <button id="Recent-income">Income</button>
+            <button id="Recent-expenses">Expenses</button>
+          </div>
+          <div class="right">
+            <button id="add-transaction">Add-transaction</button>
+          </div>
         </section>
 
+        <!-- down-section -->
 
-        <!-- Transaction section -->
-        <section class="tarnsaction">
-            <section class="top-transaction">
-                <div class="left">
-                    <h1>Recent Transaction</h1>
-                    <button id="Recent-all" class="active">All</button>
-                    <button id="Recent-income">Income</button>
-                    <button id="Recent-expenses">Expenses</button>
+        <section class="down-transaction">
+          <!-- Table -->
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Type</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody id="transaction-list"></tbody>
+          </table>
+
+          <!-- form -->
+
+          <form class="Transaction-form">
+            <div class="top-form">
+              <h2>Add Transaction</h2>
+              <button id="close-form">X</button>
+            </div>
+
+            <div class="form-btn">
+              <button type="button" id="income-transaction" class="active-in">
+                Income
+              </button>
+              <button type="button" id="expenses-transaction">Expenses</button>
+            </div>
+
+            <div class="form-description">
+              <p>Description</p>
+              <input
+                type="text"
+                id="description"
+                placeholder="e.g.Freelance project,Groceries,etc"
+              />
+            </div>
+
+            <div class="form-inputs">
+              <div class="left">
+                <div class="form-group">
+                  <p>Amount(INR)</p>
+                  <div class="input-wrapper">
+                    <input
+                      type="number"
+                      id="amount"
+                      name="amount"
+                      placeholder="0.00"
+                      step="0.01"
+                    />
+                  </div>
                 </div>
-                <div class="right">
-                    <button id="add-transaction">Add-transaction</button>
+              </div>
+              <div class="right">
+                <p>Date</p>
+                <div class="input-wrapper">
+                  <span class="calendar-icon">
+                    <i data-lucide="calendar-days"></i>
+                  </span>
+                  <input type="date" id="date" name="date" />
                 </div>
-            </section>
+              </div>
+            </div>
 
-            <!-- down-section -->
+            <div class="form-category">
+              <select id="category">
+                <option value="Freelance">Freelance</option>
+                <option value="Food & Dining">Food & Dining</option>
+                <option value="Bills & Utilities">Bills & Utilities</option>
+                <option value="Groceries">Groceries</option>
+                <option value="Online Shopping">Shopping</option>
+                <option value="Transport">Transport</option>
+                <option value="Savings">Savings</option>
+                <option value="Entertainment">Entertainment</option>
+              </select>
+            </div>
 
-            <section class="down-transaction">
-
-                <!-- Table -->
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Description</th>
-                            <th>Category</th>
-                            <th>Type</th>
-                            <th>Amount</th>
-                        </tr>
-                    </thead>
-                    <tbody id="transaction-list">
-                      
-                    </tbody>
-                </table>
-
-                <!-- form -->
-
-                <form class="Transaction-form">
-
-
-                    <div class="top-form">
-                        <h2>Add Transaction</h2>
-                        <button id="close-form">X</button>
-                    </div>
-
-
-                    <div class="form-btn">
-                       <button type="button" id="income-transaction" class="active-in">Income</button>
-                       <button type="button" id="expenses-transaction">Expenses</button>
-                    </div>
-
-
-                    <div class="form-description">
-                        <p>Description</p>
-                        <input type="text" id="description" placeholder="e.g.Freelance project,Groceries,etc">
-                    </div>
-
-
-                    <div class="form-inputs">
-                        <div class="left">
-                            <div class="form-group">
-                                <p>Amount(INR)</p>
-                                <div class="input-wrapper">
-                                    <input type="number" id="amount" name="amount" placeholder="0.00" step="0.01">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <p>Date</p>
-                            <div class="input-wrapper">
-                                <span class="calendar-icon">
-                                    <i data-lucide="calendar-days"></i>
-                                </span>
-                                <input type="date" id="date" name="date">
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="form-category">
-                        <select id="category">
-                            <option value="Freelance">Freelance</option>
-                            <option value="Food & Dining">Food & Dining</option>
-                            <option value="Bills & Utilities">Bills & Utilities</option>
-                            <option value="Groceries">Groceries</option>
-                            <option value="Online Shopping">Shopping</option>
-                            <option value="Transport">Transport</option>
-                            <option value="Savings">Savings</option>
-                            <option value="Entertainment">Entertainment</option>
-                        </select>
-                    </div>
-
-                    <button id="Submit-form">Save Transaction</button>
-                </form>
-
-            </section>
+            <button id="Submit-form">Save Transaction</button>
+          </form>
         </section>
+      </section>
     </main>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="index.js"></script>
-</body>
-
+  </body>
 </html>
