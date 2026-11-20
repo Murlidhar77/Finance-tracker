@@ -118,7 +118,7 @@ form1.addEventListener("submit", function (e) {
   form1.reset();
   Renderdata();
   CreateTable();
-  Creategraph()
+  Creategraph();
 });
 
 //cards data on the dynamic
@@ -154,6 +154,9 @@ function Renderdata() {
 
 /// add table data dynamically
 let tablebody = document.querySelector("#transaction-list");
+let incomefilterbtn = document.querySelector("#Recent-income");
+let allfilterbtn = document.querySelector("#Recent-all");
+let expensesfilterbtn = document.querySelector("#Recent-expenses");
 
 function CreateTable() {
   let categoryIcons = [
@@ -198,37 +201,64 @@ function CreateTable() {
   let alltransaction = [...incomedata, ...expensesdata].sort(
     (a, b) => new Date(b.date) - new Date(a.date),
   );
+  let incomefilter = [...incomedata].sort(
+    (a, b) => new Date(b.date) - new Date(a.date),
+  );
+  let expensesfilter = [...expensesdata].sort(
+    (a, b) => new Date(b.date) - new Date(a.date),
+  );
+  function Createspecific(dataarray) {
+    tablebody.innerHTML = "";
+    dataarray.forEach((transaction) => {
+      let amountclass =
+        transaction.type === "income" ? "income-style" : "expenses-style";
+      let sign = transaction.type === "income" ? "+" : "-";
 
-  alltransaction.forEach((transaction) => {
-    let amountclass =
-      transaction.type === "income" ? "income-style" : "expenses-style";
-    let sign = transaction.type === "income" ? "+" : "-";
+      let categorydata = categoryIcons.find((item) => {
+        return item.category === transaction.category;
+      }) || {
+        icon: "ri-price-tag-3-line",
+        color: "#888888",
+      };
 
-    let categorydata = categoryIcons.find((item) => {
-      return item.category === transaction.category;
-    }) || {
-      icon: "ri-price-tag-3-line",
-      color: "#888888",
-    };
-
-    let iconhtml = `
+      let iconhtml = `
 <span style = "background-color:${categorydata.color}">
 <i class="${categorydata.icon}"></i>
 </span>`;
 
-    let row = document.createElement("tr");
-    row.innerHTML = `
+      let row = document.createElement("tr");
+      row.innerHTML = `
     <td>${transaction.date}</td>
     <td>${transaction.description}</td>
     <td>${iconhtml}${transaction.category}</td>
     <td>${transaction.type}</td>
    <td class="${amountclass}">${sign} ₹${transaction.amount}</td>
     `;
-    tablebody.appendChild(row);
+      tablebody.appendChild(row);
+    });
+  }
+
+  function Setactive(activebtn) {
+    incomefilterbtn.classList.remove("active");
+    expensesfilterbtn.classList.remove("active");
+    allfilterbtn.classList.remove("active");
+    activebtn.classList.add("active");
+  }
+
+  incomefilterbtn.addEventListener("click", function () {
+    Createspecific(incomefilter);
+    Setactive(incomefilterbtn);
   });
+  expensesfilterbtn.addEventListener("click", function () {
+    Createspecific(expensesfilter);
+    Setactive(expensesfilterbtn);
+  });
+  allfilterbtn.addEventListener("click", function () {
+    Createspecific(alltransaction);
+    Setactive(allfilterbtn);
+  });
+  Createspecific(alltransaction);
 }
-
-
 
 //graph and table data
 
@@ -261,16 +291,13 @@ function Creategraph() {
           {
             data: chartdata,
 
-            backgroundColor: [
-              "#22c55e",
-              "#ef4444"
-            ],
+            backgroundColor: ["#22c55e", "#ef4444"],
 
             borderColor: "#ffffff",
             borderWidth: 2,
-            hoverOffset: 8
-          }
-        ]
+            hoverOffset: 8,
+          },
+        ],
       },
 
       options: {
@@ -285,37 +312,36 @@ function Creategraph() {
             labels: {
               color: "#888888",
               padding: 20,
-              usePointStyle: true
-            }
-          }
-        }
-      }
+              usePointStyle: true,
+            },
+          },
+        },
+      },
     });
   }
 }
 
-let tooglebtn = document.querySelector("#toggle-btn")
-let lightmode = localStorage.getItem("lighttheme")
+let tooglebtn = document.querySelector("#toggle-btn");
+let lightmode = localStorage.getItem("lighttheme");
 
 function Enablelight() {
-  document.body.classList.add("light")
-  localStorage.setItem("lighttheme","active")
+  document.body.classList.add("light");
+  localStorage.setItem("lighttheme", "active");
 }
 
-function Disablelight(){
-  document.body.classList.remove("light")
-  localStorage.setItem("lighttheme","inactive")
+function Disablelight() {
+  document.body.classList.remove("light");
+  localStorage.setItem("lighttheme", "inactive");
 }
 
 if (lightmode === "active") {
-  Enablelight()
-  tooglebtn.checked = true
+  Enablelight();
+  tooglebtn.checked = true;
 }
 
-tooglebtn.addEventListener("change",function () {
-  tooglebtn.checked ? Enablelight() : Disablelight()
-})
-
+tooglebtn.addEventListener("change", function () {
+  tooglebtn.checked ? Enablelight() : Disablelight();
+});
 
 Renderdata();
 CreateTable();
