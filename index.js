@@ -16,10 +16,6 @@ Createprofile.addEventListener("click", function () {
   Overlay.style.display = "flex";
 });
 
-closeprofile.addEventListener("click", function () {
-  Overlay.style.display = "none";
-});
-
 //profilecode
 submitbutton.addEventListener("click", CreateProfile);
 let persondetails = JSON.parse(localStorage.getItem("persondetails")) || [];
@@ -341,6 +337,47 @@ if (lightmode === "active") {
 
 tooglebtn.addEventListener("change", function () {
   tooglebtn.checked ? Enablelight() : Disablelight();
+});
+
+let Overview = document.querySelector("#Overview");
+let Transaction = document.querySelector("#transaction");
+let Analytics = document.querySelector("#Analytics");
+let profilebtn = document.querySelector("#Profile-settings");
+let cardsdiv = document.querySelector(".cards")
+let graphcard = document.querySelector(".cashflow-parent")
+
+
+function Setactivetwo(activebtn) {
+  Overview.classList.remove("active-logs");
+  Transaction.classList.remove("active-logs");
+  Analytics.classList.remove("active-logs");
+  profilebtn.classList.remove("active-logs");
+  activebtn.classList.add("active-logs");
+}
+
+Analytics.addEventListener("click",function () {
+  graphcard.focus()
+  Setactivetwo(Analytics)
+})
+
+Overview.addEventListener("click", function () {
+  Setactivetwo(Overview);
+  cardsdiv.focus()
+});
+
+Transaction.addEventListener("click", function () {
+  form1.focus()
+  Setactivetwo(Transaction);
+});
+
+profilebtn.addEventListener("click", function () {
+  Overlay.style.display = "flex";
+  Setactivetwo(profilebtn);
+});
+
+closeprofile.addEventListener("click", function () {
+  Overlay.style.display = "none";
+  Setactivetwo(Overview);
 });
 
 Renderdata();
